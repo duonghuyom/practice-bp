@@ -8,10 +8,29 @@
   </head>
   <body>
     <h1>Hello World</h1>
+    <div id="number">0</div>
+    <br />
+    <button onclick="play()">play</button>
+    <button onclick="pause()">pause</button>
     <script>
-      document.write(
-        "This is my first JavaScript program in Visual Studio Code"
-      );
+      var number = document.getElementById("number");
+      var isPause = true;
+      var count = 0;
+
+      setInterval(() => {
+        if (!isPause) {
+          number.innerHTML = count;
+          count++;
+        }
+      }, 1000);
+
+      function play() {
+        isPause = false;
+      }
+
+      function pause() {
+        isPause = true;
+      }
     </script>
   </body>
 </html>
