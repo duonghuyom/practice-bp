@@ -4,18 +4,18 @@ import { useState } from "react";
 
 function App() {
   const [number, setNumber] = useState(0);
-  const [intervalId, setIntervalId] = useState(0);
+  const [intervalNum, setIntervalNum] = useState(0);
 
   const play = () => {
-    const newIntervalId = setInterval(() => {
+    const newIntervalNum = setInterval(() => {
       setNumber((num) => num + 1);
     }, 1000); // sau moi 1s thi se increase number
-    setIntervalId(newIntervalId); // set gia tri intervalId theo num
+    setIntervalNum(newIntervalNum); // set gia tri intervalId theo num
   };
 
   const pause = () => {
-    clearInterval(intervalId);
-    setIntervalId(0);
+    clearInterval(intervalNum);
+    setIntervalNum(0);
   };
 
   return (
