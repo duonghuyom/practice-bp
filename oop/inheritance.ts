@@ -22,6 +22,10 @@ class NguoiDung {
   logout() {
     console.log("Logout Successfully");
   }
+
+  getPassword() {
+    return this.#password;
+  }
 }
 
 class Author extends NguoiDung {
@@ -33,7 +37,6 @@ class Author extends NguoiDung {
   }
 
   createPost(content) {
-    // add content to your DB. :)
     this.#numOfPost++;
   }
 
@@ -48,7 +51,6 @@ class Admin extends NguoiDung {
   }
 
   removeUser(userId) {
-    // remove this userId from your DB.
     console.log("User Removed successfully.");
   }
 }
@@ -59,14 +61,17 @@ nehal.createPost(
   "I hope you are enjoying this article. Don't forget to leave your feedback. :)"
 );
 nehal.createPost("I am tired, Do you wanna buy me a coffee? :)");
-console.log(nehal.getNumOfPost()); // 2
 
 console.log(nehal.email); // lay duoc ra email
 console.log(nehal.numOfPost); // khong lay ra duoc gia tri numOfPost vi la bien private
 console.log(nehal.getNumOfPost()); // goi qua method thi se lay duoc gia tri private
+console.log(nehal.getPassword());
 
 const json = new Admin("jason@gmail.com", "[Object] [object]");
 json.login("jason@gmail.com", "[Object] [object]");
 json.resetPassword("{id: 1}");
 json.login("jason@gmail.com", "{id: 1}");
 json.removeUser(12);
+
+// trường hợp access private property trong class cha từ class con thì không access được, ngay cả
+// khi thông qua method
