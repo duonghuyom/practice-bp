@@ -4,11 +4,13 @@
 const number = [1, 2, 3, 4, 5, 6, 7];
 
 // sum of all the number in array
-function sum(a, b, c, d, e, f, g) {
-  return a + b + c + d + e + f + g;
+function summary(num) {
+  let sum = 0;
+  num.forEach((arg) => (sum += arg));
+  return sum;
 }
 
-console.log(sum(...number));
+console.log(summary([...number]));
 
 // sort the number in descending way
 function sortRestArg(...arg) {
