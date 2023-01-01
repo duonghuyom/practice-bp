@@ -5,6 +5,14 @@ import { useState } from "react";
 function App() {
   const [number, setNumber] = useState(0);
   const [intervalNum, setIntervalNum] = useState(0);
+  const [data, setData] = useState({
+    name: "Huy",
+    age: 21,
+    education: {
+      primary: "good",
+      highschool: "good",
+    },
+  });
 
   const play = () => {
     const newIntervalNum = setInterval(() => {
@@ -18,6 +26,17 @@ function App() {
     setIntervalNum(0);
   };
 
+  const change = () => {
+    setData({
+      ...data,
+      education: {
+        primary: "excellent",
+        highschool: "excellent",
+      },
+    });
+    console.log(data);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -29,6 +48,14 @@ function App() {
           <h1>{number}</h1>
           <button onClick={play}>play</button>
           <button onClick={pause}>pause</button>
+        </div>
+        <br />
+        <div>
+          <h4>
+            {data.name} {data.age} {data.education.highschool}{" "}
+            {data.education.primary}
+          </h4>
+          <button onClick={change}>change</button>
         </div>
       </header>
     </div>
