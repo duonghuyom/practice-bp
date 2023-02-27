@@ -44,22 +44,35 @@
 //   }
 // }
 
-class Car {
-  constructor(model, color) {
-    this.model = model;
-    this.color = color;
-  }
+// class Car {
+//   constructor(model, color) {
+//     this.model = model;
+//     this.color = color;
+//   }
 
-  getCarInfo() {
-    return "this is model " + this.model + " with color " + this.color;
-  }
+//   getCarInfo() {
+//     return "this is model " + this.model + " with color " + this.color;
+//   }
 
-  customizeCar() {
-    return this.model + " will be painted to color black";
-  }
-}
+//   customizeCar() {
+//     return this.model + " will be painted to color black";
+//   }
+// }
 
-const tesla = new Car("x", "white");
-console.log(tesla);
-console.log(tesla.getCarInfo());
-console.log(tesla.customizeCar("aaa"));
+// const tesla = new Car("x", "white");
+// console.log(tesla);
+// console.log(tesla.getCarInfo());
+// console.log(tesla.customizeCar("aaa"));
+
+var _ = require("lodash");
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var listOfNumbers = "";
+
+listOfNumbers = _.chunk(numbers, 2);
+console.log(listOfNumbers);
+
+listOfNumbers = _.chunk(numbers, 3);
+console.log(listOfNumbers);
+
+listOfNumbers = _.chunk(numbers, 1);
+console.log(listOfNumbers);
