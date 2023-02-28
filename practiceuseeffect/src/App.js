@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-export default function App() {
+export default function App({ initialCount }) {
   const [count, setCount] = useState(0);
 
   // const increase = () => {
@@ -26,8 +26,13 @@ export default function App() {
   return (
     <div>
       <p>You clicked {count} times</p>
-      {/* <button onClick={increase}>Click me</button> */}
-      {/* <button onClick={showAlert}>Show alert</button> */}
+      <button onClick={increase}>Click me</button>
+      <button onClick={showAlert}>Show alert</button>
+      <br />
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(initialCount)}>Reset</button>
+      <button onClick={() => setCount((prevCount) => prevCount - 1)}>-</button>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>+</button>
     </div>
   );
 }

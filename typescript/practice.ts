@@ -20,3 +20,9 @@ class Computer {
 
 const mac = new Computer("mac", "16gb", "512gb");
 console.log(mac.getComputerInfo());
+
+const example = {
+  name: 'huy',
+  age: 21
+}
+console.log(example!.name)
